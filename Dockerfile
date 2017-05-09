@@ -8,6 +8,7 @@ RUN apk add --update --no-cache \
 	linux-headers \
 	binutils-gold \
 	gnupg \
+	file \ 
 	libstdc++
 
 RUN apk add --no-cache ruby \
