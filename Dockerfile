@@ -17,6 +17,7 @@ RUN apk add --no-cache ruby \
 	ruby-minitest \
 	ruby-dev \
 	ruby-libs \
+	ruby-io-console \
 	libxml2 \
 	libxml2-dev \
 	libffi \
