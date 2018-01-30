@@ -24,7 +24,10 @@ RUN apk add --no-cache ruby \
 	libffi-dev
 
 RUN apk add --no-cache nodejs \
-	nodejs-dev && \
-	npm install npm@latest elm elm-live -g
+	nodejs-dev \
+	nodejs-npm && \
+	npm install npm@latest
+
+RUN npm install elm elm-live -g
 
 RUN gem install --no-document bundler rake middleman
