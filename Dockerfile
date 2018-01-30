@@ -1,4 +1,6 @@
 FROM alpine:latest
+ENV HOME /srv
+WORKDIR /srv
 
 RUN apk add --update --no-cache \
 	curl \
@@ -26,8 +28,11 @@ RUN apk add --no-cache ruby \
 RUN apk add --no-cache nodejs \
 	nodejs-dev \
 	nodejs-npm && \
-	npm install npm@latest
+	npm -g config set user root && \
+	npm install npm@latest -g
 
-RUN npm install elm elm-live -g
+RUN npm install elm elm-live -g --quiet --no-progress
 
 RUN gem install --no-document bundler rake middleman
+
+RUN npm cache clean --force
