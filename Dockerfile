@@ -25,6 +25,6 @@ RUN apk add --no-cache ruby \
 
 RUN apk add --no-cache nodejs \
 	nodejs-dev && \
-	npm install npm@latest -g
+	npm install npm@latest elm elm-live -g
 
 RUN gem install --no-document bundler rake middleman
